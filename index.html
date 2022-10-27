@@ -1,0 +1,25 @@
+<html>
+  <script>
+    window.onload = function () {
+      const slot = document.getElementById("div1");
+      let time = 10;
+      const getTime = () => {
+        time = time - 1;
+        slot.innerHTML = "Goodbye Aliens. Ship leaves in " + time + " seconds.";  
+        let body = document.getElementById('body');
+        if(time===0){
+          body.style.backgroundColor = 'red';
+          clearInterval(run);
+        }
+      };
+      let run = setInterval(getTime, 500);
+      }
+  </script>
+
+  <body id="body">
+    <div>
+      <h1 id="div1">Hello Earthling</h1>
+    </div>
+  </body>
+</html>
+
